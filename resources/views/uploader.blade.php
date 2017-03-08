@@ -14,13 +14,40 @@
         </script>
     </head>
     <body>
-        <div class="container">
-            <form action="/upload" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+        <div id="app" class="container">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        Image Uploader
+                    </p>
+                </header>
 
-                <input type="file" name="image">
-                <button type="submit">Upload!</button>
-            </form>
+                <div class="card-content">
+                    <button class="button is-primary">Upload image</button>
+
+                    <input type="file" class="is-hidden">
+
+                    <hr>
+
+                    <div class="columns">
+                        <div class="column">
+                            @include('thumbnail')
+                        </div>
+
+                        <div class="column">
+                            @include('thumbnail')
+                        </div>
+
+                        <div class="column">
+                            @include('thumbnail')
+                        </div>
+
+                        <div class="column">
+                            @include('thumbnail')
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <script src="{{ asset('js/app.js') }}"></script>
